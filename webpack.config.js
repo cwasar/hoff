@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtrackPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -13,9 +14,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     optimization: {
-      splitChunks: {
-          chunks: "all"
-      }
+        splitChunks: {
+            chunks: "all"
+        }
     },
     devServer: {
         port: 4200
@@ -28,7 +29,14 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtrackPlugin({
             filename: '[name].css'
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {from: path.resolve(__dirname, 'src/assets/img/main-slider/'), to: path.resolve(__dirname, 'dist')}
+            ]
         })
+
+
     ],
     module: {
         rules: [

@@ -1,4 +1,6 @@
 //меню каталога
+import $ from "jquery";
+
 console.log('custom')
 const catalog = document.querySelector('.header-catalog')
 const cross = document.querySelector('.header-bottom-catalog-btn > span')
@@ -35,5 +37,10 @@ const menu = document.querySelector('.header-catalog-main').addEventListener('mo
             }
         })
     }
+})
+
+//main-slider
+$(".carousel").slick({
+    dots: true
 })
 

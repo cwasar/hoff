@@ -1,4 +1,5 @@
-import * as $ from 'jquery'
+import $ from 'jquery'
+import 'slick-carousel'
 import '../../styles/default/index.css'
 import '../../styles/sass/index.sass'
 import 'bootstrap/dist/css/bootstrap.min.css'
