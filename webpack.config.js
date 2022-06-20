@@ -6,11 +6,10 @@ const MiniCssExtrackPlugin = require('mini-css-extract-plugin')
 module.exports = {
     mode: 'development',
     entry: {
-        'main': ['@babel/polyfill', './src/js/index.js'],
-        'somejs': './src/js/some.js'
+        'index': ['@babel/polyfill', './src/js/default/index.js']
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
     optimization: {
