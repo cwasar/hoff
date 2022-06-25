@@ -32,7 +32,9 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                {from: path.resolve(__dirname, 'src/assets/img/main-slider/'), to: path.resolve(__dirname, 'dist')}
+                {from: path.resolve(__dirname, 'src/assets/img/main-slider/'), to: path.resolve(__dirname, 'dist')},
+                {from: path.resolve(__dirname, 'src/assets/img/ideas/'), to: path.resolve(__dirname, 'dist')},
+                {from: path.resolve(__dirname, 'src/assets/img/'), to: path.resolve(__dirname, 'dist')}
             ]
         })
 
