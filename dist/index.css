@@ -22,6 +22,9 @@
 body {
   font-family: 'Roboto'; }
 
+.container {
+  max-width: 1450px; }
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -230,9 +233,13 @@ body {
     .header-center-content-triggers {
       display: flex;
       align-items: center;
-      justify-content: space-between; }
-      .header-center-content-triggers-login i {
-        margin-right: 0.2em; }
+      justify-content: flex-end; }
+      .header-center-content-triggers-cart {
+        margin-left: 1.5rem; }
+      .header-center-content-triggers-login {
+        margin-left: 1.5rem; }
+        .header-center-content-triggers-login i {
+          margin-right: 0.2em; }
 
 .header-bottom {
   display: flex;
@@ -399,4 +406,41 @@ body {
           border: 1px solid black; }
       .main-ideas-content-blocks {
         margin-top: 1rem; }
+  .main-express {
+    margin-top: 3rem; }
+    .main-express-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f0f0f0;
+      margin-top: 1rem; }
+      .main-express-block-img {
+        max-width: 70%; }
+        .main-express-block-img img {
+          width: 100%; }
+      .main-express-block-text {
+        max-width: 30%;
+        padding: 1.5rem; }
+        .main-express-block-text-header {
+          font-size: 1.5rem;
+          line-height: 1.5rem; }
+        .main-express-block-text-content {
+          margin-top: 1rem; }
+        .main-express-block-text-btn {
+          margin-top: 1rem;
+          border: 1px solid black;
+          border-radius: 5px;
+          width: 250px;
+          padding: 0.6rem 1.5rem;
+          font-size: 1.5rem;
+          position: relative; }
+          .main-express-block-text-btn:before {
+            content: '';
+            background-image: url("https://www.downloadclipart.net/large/12584-right-black-arrow-design.png");
+            background-size: cover;
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            top: 10px;
+            left: 170px; }
 

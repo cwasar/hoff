@@ -81,15 +81,25 @@ function showPin(e) {
 
 }
 
-// blocks.addEventListener('mouseout', (e) => {
-//
-//     console.log(e.target)
-//         if(e.target.classList.contains('active')){
-//
-//         } else {
-//             e.target.classList.remove('active')
-//             e.target.nextElementSibling.classList.remove('active')
-//         }
-//
-//
-// })
+
+
+//фиксируем шапку при прокрутке и смещаем кнопку каталога
+console.log(window.pageYOffset)
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header-center')
+    const srch = document.querySelector('.header-center-content-logo')
+    const btn = document.querySelector('.header-bottom-catalog-btn')
+    const back = document.querySelector('.header-bottom-catalog')
+
+    if(window.pageYOffset > 45){
+
+        header.style.position = 'fixed'
+        header.style.width = '100%'
+        header.style.zIndex = 1000
+        srch.after(btn)
+    } else {
+        header.style.position = 'relative'
+        back.prepend(btn)
+    }
+})
+
