@@ -1,5 +1,6 @@
 //меню каталога
-import $ from "jquery";
+//jquery fontawsom fancybox
+
 
 console.log('custom')
 const catalog = document.querySelector('.header-catalog')
@@ -40,9 +41,48 @@ const menu = document.querySelector('.header-catalog-main').addEventListener('mo
 })
 
 //main-slider
-$(".carousel").slick({
-    dots: true
+$( document ).ready(function() {
+    $(".carousel").slick({
+        dots: true,
+        prevArrow: '<i class="fa-solid fa-angle-left slick-prev"></i>',
+        nextArrow: '<i class="fa-solid fa-angle-right slick-next"></i>'
+    })
+
+    //инициализация fancy-box
+const fancybox = $('.fancybox')
+    fancybox.fancybox()
+    if (fancybox.length) {
+        // Руссификация
+        fancybox.fancybox({
+            lang: 'ru',
+            i18n: {
+                'ru': {
+                    CLOSE: 'Закрыть',
+                    NEXT: 'Следующий',
+                    PREV: 'Предыдущий',
+                    ERROR: 'Запрошенное содержимое не может быть загружено. <br>Пожалуйста, повторите попытку позже.',
+                    PLAY_START: 'Запуск слайд-шоу',
+                    PLAY_STOP: 'Остановить слайд-шоу',
+                    FULL_SCREEN: 'На весь экран',
+                    THUMBS: 'Миниатюры',
+                    DOWNLOAD: 'Скачать',
+                    SHARE: 'Поделиться',
+                    ZOOM: 'Приблизить'
+                }
+            }
+        })
+    }
+
+
+
+
 })
+
+
+
+
+
+
 
 
 //блок Идеи для вдохновения
@@ -51,23 +91,24 @@ const block = document.querySelector('.main-ideas-content-block')
 blocks.addEventListener('mouseover', showPin)
 
 function showPin(e) {
-    let w = block.offsetWidth
-    let h = block.offsetHeight
-    if(e.target.classList.contains('main-ideas-content-block-pin')){
+    let w = block.offsetWidth,
+        h = block.offsetHeight
+
+    if (e.target.classList.contains('main-ideas-content-block-pin')) {
         e.target.classList.add('active')
         e.target.nextElementSibling.classList.add('active')
 
-        let pinH = e.target.style.top.substring(0, e.target.style.top.length - 1)
-        let pinW = e.target.style.left.substring(0, e.target.style.left.length - 1)
+        let pinH = parseInt(e.target.style.top.substring(0, e.target.style.top.length - 1)) || 0
+        let pinW = parseInt(e.target.style.left.substring(0, e.target.style.left.length - 1)) || 0
 
-        if(pinH < 50){
+        if (pinH < 50) {
             e.target.nextElementSibling.style.top = +pinH + 1 + '%'
         } else {
             e.target.nextElementSibling.style.top = +pinH + 1 - (e.target.nextElementSibling.offsetHeight * 100 / h) + '%'
         }
-        if(pinW < 50){
+        if (pinW < 50) {
             e.target.nextElementSibling.style.left = +pinW + 1 + '%'
-        }else {
+        } else {
             e.target.nextElementSibling.style.left = +pinW + 1 - (e.target.nextElementSibling.offsetWidth * 100 / w) + '%'
         }
 
@@ -87,7 +128,7 @@ function showPin(e) {
 console.log(window.pageYOffset)
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header-center')
-    const srch = document.querySelector('.header-center-content-logo')
+    const search = document.querySelector('.header-center-content-logo')
     const btn = document.querySelector('.header-bottom-catalog-btn')
     const back = document.querySelector('.header-bottom-catalog')
 
@@ -96,7 +137,7 @@ window.addEventListener('scroll', function() {
         header.style.position = 'fixed'
         header.style.width = '100%'
         header.style.zIndex = 1000
-        srch.after(btn)
+        search.after(btn)
     } else {
         header.style.position = 'relative'
         back.prepend(btn)

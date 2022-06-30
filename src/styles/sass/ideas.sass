@@ -1,0 +1,57 @@
+//Идеи для вдохновения
+.main
+  padding-top: 30px
+  &-ideas
+    margin-top: 3rem
+    &-content
+      &-header
+        display: flex
+        justify-content: space-between
+        a
+          color: #979393
+          text-decoration: none
+          &:hover
+            transition: all 0.3s ease
+            color: black
+      &-block
+        position: relative
+        &-cart
+          display: none
+          width: 250px
+          background-color: transparent
+          padding: 1rem
+          position: absolute
+          &.active
+            display: flex
+            align-items: center
+            flex-direction: column
+          &-bg
+            border-radius: 3px
+            background-color: $white
+            padding: 0.7rem
+
+          &-top
+          &-bottom
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin-top: 1rem
+            font-size: 30px
+            width: 100%
+          &-price
+            font-size: 25px
+          &-add
+        img
+          width: 100%
+        &-pin
+          width: 10px
+          height: 10px
+          background-color: $white
+          border-radius: 50%
+          position: absolute
+          cursor: pointer
+          border: 2px solid red
+          &.active
+            border: 1px solid black
+        &s
+          margin-top: 1rem
