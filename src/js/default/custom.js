@@ -9,13 +9,13 @@ const subMenu = document.querySelector('#submenu')
 const allMenu = Array.from(document.querySelectorAll('.submenu-item'))
 
 
-const btnCatalog = document.querySelector('.header-bottom-catalog').addEventListener('click',()=>{
+const btnCatalog = document.querySelector('.header-bottom-catalog').addEventListener('click',() => {
     catalog.classList.toggle('active')
     cross.classList.toggle('active')
     allMenu.forEach(item => {
-        if(item.dataset.name === document.querySelector('.header-catalog-main-item').dataset.name){
+        if (item.dataset.name === document.querySelector('.header-catalog-main-item').dataset.name){
             item.classList.add('active')
-        }else {
+        } else {
             item.classList.remove('active')
         }
     })
@@ -23,7 +23,7 @@ const btnCatalog = document.querySelector('.header-bottom-catalog').addEventList
 })
 
 const menu = document.querySelector('.header-catalog-main').addEventListener('mouseover', (e) => {
-    if(e.target.className === 'header-catalog-main-item'){
+    if (e.target.className === 'header-catalog-main-item') {
         let allitems = document.querySelectorAll('.header-catalog-main-item')
         allitems.forEach(item => {
             item.classList.remove('active')
@@ -31,9 +31,9 @@ const menu = document.querySelector('.header-catalog-main').addEventListener('mo
         e.target.classList.add('active')
         subMenu.innerHTML = e.target.innerText
         allMenu.forEach(item => {
-            if(item.dataset.name === e.target.dataset.name){
+            if (item.dataset.name === e.target.dataset.name) {
                 item.classList.add('active')
-            }else {
+            } else {
                 item.classList.remove('active')
             }
         })
@@ -41,40 +41,52 @@ const menu = document.querySelector('.header-catalog-main').addEventListener('mo
 })
 
 //main-slider
-$( document ).ready(function() {
+
+$( document ).ready(function () {
     $(".carousel").slick({
         dots: true,
         prevArrow: '<i class="fa-solid fa-angle-left slick-prev"></i>',
         nextArrow: '<i class="fa-solid fa-angle-right slick-next"></i>'
     })
 
-    //инициализация fancy-box
-const fancybox = $('.fancybox')
-    fancybox.fancybox()
-    if (fancybox.length) {
-        // Руссификация
-        fancybox.fancybox({
-            lang: 'ru',
-            i18n: {
-                'ru': {
-                    CLOSE: 'Закрыть',
-                    NEXT: 'Следующий',
-                    PREV: 'Предыдущий',
-                    ERROR: 'Запрошенное содержимое не может быть загружено. <br>Пожалуйста, повторите попытку позже.',
-                    PLAY_START: 'Запуск слайд-шоу',
-                    PLAY_STOP: 'Остановить слайд-шоу',
-                    FULL_SCREEN: 'На весь экран',
-                    THUMBS: 'Миниатюры',
-                    DOWNLOAD: 'Скачать',
-                    SHARE: 'Поделиться',
-                    ZOOM: 'Приблизить'
-                }
-            }
-        })
-    }
 
 
 
+//main-slider-goods
+    $(".carousel-goods").slick({
+        dots: false,
+        slidesToShow: 5,
+        initialSlide: 0,
+        centerMode: false,
+        prevArrow: '<i class="fa-solid fa-angle-left slick-prev"></i>',
+        nextArrow: '<i class="fa-solid fa-angle-right slick-next"></i>'
+    })
+
+
+//инициализация fancy-box
+// const fancybox = $('.fancybox')
+//     fancybox.fancybox()
+//     if (fancybox.length) {
+//         // Руссификация
+//         fancybox.fancybox({
+//             lang: 'ru',
+//             i18n: {
+//                 'ru': {
+//                     CLOSE: 'Закрыть',
+//                     NEXT: 'Следующий',
+//                     PREV: 'Предыдущий',
+//                     ERROR: 'Запрошенное содержимое не может быть загружено. <br>Пожалуйста, повторите попытку позже.',
+//                     PLAY_START: 'Запуск слайд-шоу',
+//                     PLAY_STOP: 'Остановить слайд-шоу',
+//                     FULL_SCREEN: 'На весь экран',
+//                     THUMBS: 'Миниатюры',
+//                     DOWNLOAD: 'Скачать',
+//                     SHARE: 'Поделиться',
+//                     ZOOM: 'Приблизить'
+//                 }
+//             }
+//         })
+//     }
 
 })
 
@@ -113,7 +125,7 @@ function showPin(e) {
         }
 
     }
-    if(e.target.tagName === 'IMG'){
+    if (e.target.tagName === 'IMG') {
         blocks.querySelectorAll('.active').forEach(item => {
             item.classList.remove('active')
         })
@@ -132,7 +144,7 @@ window.addEventListener('scroll', function() {
     const btn = document.querySelector('.header-bottom-catalog-btn')
     const back = document.querySelector('.header-bottom-catalog')
 
-    if(window.pageYOffset > 45){
+    if (window.pageYOffset > 45) {
 
         header.style.position = 'fixed'
         header.style.width = '100%'

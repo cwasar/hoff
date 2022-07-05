@@ -4,10 +4,12 @@
 //block slider
 
 .carousel
-
+  margin-top: 2rem
   &__img
     max-height: 600px
     margin: 0 auto
+
+
 
 //arrows
 .slick-arrow
@@ -73,3 +75,47 @@
 
 
 
+  //second slider
+.carousel-goods
+  box-sizing: border-box
+  margin-top: 2rem
+  &__img
+    max-height: 400px
+    max-width: 99%
+  &__item
+    border: 1px solid #a19d9d
+    border-radius: 1px
+    margin: 0 1rem
+    z-index: 10
+  &-price
+    padding: 0 1rem
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    margin-top: 2rem
+    span#price
+      font-size: 1.7rem
+    span#carr
+      font-size: 1.5rem
+    span#name
+      font-weight: bold
+      a
+        text-decoration: none
+        color: black
+        &:hover
+          transition: all 0.3s ease
+          color: red
+  &-cart
+    margin: 2rem 0 1rem 0
+    padding: 0 1rem
+    display: flex
+    align-items: center
+    justify-content: space-between
+    a
+      color: black
+    i
+      font-size: 2rem
+      color: red
+      &:hover
+        color: darkred
+        cursor: pointer
