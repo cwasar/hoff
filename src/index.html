@@ -10,8 +10,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
 </head>
 <body>
+<div class="overlay"></div>
 
 <header class="header">
 
@@ -32,7 +37,7 @@
                 <div class="col-2">
                     <div class="header-top-contacts">
                         <a href="mailto:cwasar@iclod.com"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="tel:+79773330744">8 (800) 200-85-55</a>
+                        <a href="tel:+79773330744" id="mobile"><i class="fa-solid fa-mobile-screen-button"></i><span>8 (800) 200-85-55</span></a>
                     </div>
 
 
@@ -84,7 +89,7 @@
                     <div class="header-bottom-catalog">
                         <div class="header-bottom-catalog-btn">
                             <span></span>
-                            Каталог
+                            <i>Каталог</i>
                         </div>
 
 
@@ -107,80 +112,76 @@
 
         </div>
     </div>
+
     <div class="header-catalog">
         <div class="container">
-            <div class="row">
-                <div class="col-3">
-                    <div class="header-catalog-main">
-                        <div class="header-catalog-main-item active" data-name="divani">
-                            <div class="header-catalog-main-item-left">
-                                <i class="fa-solid fa-couch"></i> <a href="">Диваны и кресла</a>
-                            </div>
-                            <i class="fa-solid fa-angle-right"></i>
+            <div class="header-catalog-content">
+                <div class="header-catalog-main">
+                    <div class="header-catalog-main-item" data-name="divani">
+                        <div class="header-catalog-main-item-left">
+                            <i class="fa-solid fa-couch"></i> <a href="" data-name="divani">Диваны и кресла</a>
                         </div>
-                        <div class="header-catalog-main-item" data-name="krovati">
-                            <div class="header-catalog-main-item-left">
-                                <i class="fa-solid fa-bed"></i> <a href="">Кровати и матрасы</a>
-                            </div>
-                            <i class="fa-solid fa-angle-right"></i>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="header-catalog-main-item" data-name="krovati">
+                        <div class="header-catalog-main-item-left">
+                            <i class="fa-solid fa-bed"></i> <a href="" data-name="krovati">Кровати и матрасы</a>
                         </div>
-                        <div class="header-catalog-main-item" data-name="sad">
-                            <div class="header-catalog-main-item-left">
-                                <i class="fa-solid fa-cow"></i> <a href="">Сад и дача</a>
-                            </div>
-                            <i class="fa-solid fa-angle-right"></i>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="header-catalog-main-item" data-name="sad">
+                        <div class="header-catalog-main-item-left">
+                            <i class="fa-solid fa-cow"></i> <a href="" data-name="sad">Сад и дача</a>
                         </div>
-                        <div class="header-catalog-main-item" data-name="textil">
-                            <div class="header-catalog-main-item-left">
-                                <i class="fa-solid fa-person-booth"></i> <a href="">Текстиль</a>
-                            </div>
-                            <i class="fa-solid fa-angle-right"></i>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="header-catalog-main-item" data-name="textil">
+                        <div class="header-catalog-main-item-left">
+                            <i class="fa-solid fa-person-booth"></i> <a href="" data-name="textil">Текстиль</a>
                         </div>
-                        <div class="header-catalog-main-item" data-name="nochild">
-                            <div class="header-catalog-main-item-left">
-                                <i class="fa-solid fa-person-booth"></i> <a href="">Текстиль</a>
-                            </div>
-                            <i class="fa-solid fa-angle-right"></i>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="header-catalog-main-item" data-name="nochild">
+                        <div class="header-catalog-main-item-left">
+                            <i class="fa-solid fa-person-booth"></i> <a href="" data-name="nochild">Текстиль</a>
                         </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+
+                <div class="header-catalog-sub">
+                    <h5 id="submenu">Диваны и кресла</h5>
+                    <div class="submenu">
+                        <div class="submenu-item" data-name="divani"><a href="">Все диваны</a></div>
+                        <div class="submenu-item" data-name="divani"><a href="">Диваны для дачи</a></div>
+                        <div class="submenu-item" data-name="divani"><a href="">Модульные диваны</a></div>
+                        <div class="submenu-item" data-name="divani">Детские диваны</div>
+                        <div class="submenu-item" data-name="divani">Диван-кровати</div>
+                        <div class="submenu-item" data-name="divani"><a href="">Все диваны</a></div>
+                        <div class="submenu-item" data-name="divani"><a href="">Диваны для дачи</a></div>
+                        <div class="submenu-item" data-name="divani"><a href="">Модульные диваны</a></div>
+                        <div class="submenu-item" data-name="divani">Детские диваны</div>
+                        <div class="submenu-item" data-name="divani">Диван-кровати</div>
+                        <div class="submenu-item" data-name="krovati">Все кровати</div>
+                        <div class="submenu-item" data-name="sad">Все для сада и огорода</div>
+                        <div class="submenu-item" data-name="sad">Швабры</div>
+                        <div class="submenu-item" data-name="sad">Садовые гномы</div>
+                        <div class="submenu-item" data-name="sad">Кресла для сада</div>
+                        <div class="submenu-item" data-name="sad">Садовые диваны</div>
+                        <div class="submenu-item" data-name="sad">Садовый орошатель</div>
+                        <div class="submenu-item" data-name="textil">Шторы</div>
+                        <div class="submenu-item" data-name="textil">Одеяла</div>
+                        <div class="submenu-item" data-name="textil">Коньяк</div>
+                        <div class="submenu-item" data-name="textil">Полотенце</div>
+                        <div class="submenu-item" data-name="textil">Текстиль</div>
+
 
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="header-catalog-sub">
-                        <h5 id="submenu">Диваны и кресла</h5>
-                        <div class="submenu">
-                            <div class="submenu-item" data-name="divani"><a href="">Все диваны</a></div>
-                            <div class="submenu-item" data-name="divani"><a href="">Диваны для дачи</a></div>
-                            <div class="submenu-item" data-name="divani"><a href="">Модульные диваны</a></div>
-                            <div class="submenu-item" data-name="divani">Детские диваны</div>
-                            <div class="submenu-item" data-name="divani">Диван-кровати</div>
-                            <div class="submenu-item" data-name="divani"><a href="">Все диваны</a></div>
-                            <div class="submenu-item" data-name="divani"><a href="">Диваны для дачи</a></div>
-                            <div class="submenu-item" data-name="divani"><a href="">Модульные диваны</a></div>
-                            <div class="submenu-item" data-name="divani">Детские диваны</div>
-                            <div class="submenu-item" data-name="divani">Диван-кровати</div>
-                            <div class="submenu-item" data-name="krovati">Все кровати</div>
-                            <div class="submenu-item" data-name="sad">Все для сада и огорода</div>
-                            <div class="submenu-item" data-name="sad">Швабры</div>
-                            <div class="submenu-item" data-name="sad">Садовые гномы</div>
-                            <div class="submenu-item" data-name="sad">Кресла для сада</div>
-                            <div class="submenu-item" data-name="sad">Садовые диваны</div>
-                            <div class="submenu-item" data-name="sad">Садовый орошатель</div>
-                            <div class="submenu-item" data-name="textil">Шторы</div>
-                            <div class="submenu-item" data-name="textil">Одеяла</div>
-                            <div class="submenu-item" data-name="textil">Коньяк</div>
-                            <div class="submenu-item" data-name="textil">Полотенце</div>
-                            <div class="submenu-item" data-name="textil">Текстиль</div>
+            </div>
 
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="header-catalog-banners">
 
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -202,8 +203,6 @@
     </div>
 
 
-
-
     <div class="main-ideas">
         <div class="container">
             <div class="main-ideas-content">
@@ -212,8 +211,7 @@
                     <span><a href="">Смотреть все</a></span>
                 </div>
                 <div class="main-ideas-content-blocks">
-                    <div class="row">
-                        <div class="col-4">
+
                             <div class="main-ideas-content-block">
                                 <img src="first.jpg" alt="">
                                 <div class="main-ideas-content-block-pin" style="top: 20%; left: 40%">
@@ -251,8 +249,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-4">
+
+
                             <div class="main-ideas-content-block">
                                 <img src="first.jpg" alt="">
                                 <div class="main-ideas-content-block-pin" style="top: 10%; left: 80%">
@@ -290,8 +288,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-4">
+
                             <div class="main-ideas-content-block">
                                 <img src="first.jpg" alt="">
                                 <div class="main-ideas-content-block-pin" style="top: 47%; left: 52%">
@@ -329,8 +326,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+
                 </div>
 
             </div>
@@ -340,31 +336,14 @@
 
     <div class="container">
         <div class="main-slider">
+            <div class="main-ideas-content-header">
+                <h3>Наши товары</h3>
+            </div>
             <div class="carousel-goods">
                 <div class="carousel-goods__item">
                     <div class="carousel-goods-item">
-                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q" alt="" class="carousel-goods__img">
-                        <div class="carousel-goods-price">
-                            <div class="carousel-goods-price-num">
-                                <span id="price">9999</span>
-                                <span id="carr">руб.</span>
-                            </div>
-
-
-                         <span id="name"><a href="">Утюг Filips s450</a></span>
-                        </div>
-                        <div class="carousel-goods-cart">
-                            <a href="">Подробнее</a>
-                            <i class="fa-solid fa-cart-arrow-down"></i>
-
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="carousel-goods__item">
-                    <div class="carousel-goods-item">
-                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q" alt="" class="carousel-goods__img">
+                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q"
+                             alt="" class="carousel-goods__img">
                         <div class="carousel-goods-price">
                             <div class="carousel-goods-price-num">
                                 <span id="price">9999</span>
@@ -385,7 +364,8 @@
                 </div>
                 <div class="carousel-goods__item">
                     <div class="carousel-goods-item">
-                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q" alt="" class="carousel-goods__img">
+                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q"
+                             alt="" class="carousel-goods__img">
                         <div class="carousel-goods-price">
                             <div class="carousel-goods-price-num">
                                 <span id="price">9999</span>
@@ -406,7 +386,8 @@
                 </div>
                 <div class="carousel-goods__item">
                     <div class="carousel-goods-item">
-                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q" alt="" class="carousel-goods__img">
+                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q"
+                             alt="" class="carousel-goods__img">
                         <div class="carousel-goods-price">
                             <div class="carousel-goods-price-num">
                                 <span id="price">9999</span>
@@ -427,7 +408,8 @@
                 </div>
                 <div class="carousel-goods__item">
                     <div class="carousel-goods-item">
-                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q" alt="" class="carousel-goods__img">
+                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q"
+                             alt="" class="carousel-goods__img">
                         <div class="carousel-goods-price">
                             <div class="carousel-goods-price-num">
                                 <span id="price">9999</span>
@@ -448,7 +430,8 @@
                 </div>
                 <div class="carousel-goods__item">
                     <div class="carousel-goods-item">
-                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q" alt="" class="carousel-goods__img">
+                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q"
+                             alt="" class="carousel-goods__img">
                         <div class="carousel-goods-price">
                             <div class="carousel-goods-price-num">
                                 <span id="price">9999</span>
@@ -469,7 +452,8 @@
                 </div>
                 <div class="carousel-goods__item">
                     <div class="carousel-goods-item">
-                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q" alt="" class="carousel-goods__img">
+                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q"
+                             alt="" class="carousel-goods__img">
                         <div class="carousel-goods-price">
                             <div class="carousel-goods-price-num">
                                 <span id="price">9999</span>
@@ -490,7 +474,30 @@
                 </div>
                 <div class="carousel-goods__item">
                     <div class="carousel-goods-item">
-                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q" alt="" class="carousel-goods__img">
+                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q"
+                             alt="" class="carousel-goods__img">
+                        <div class="carousel-goods-price">
+                            <div class="carousel-goods-price-num">
+                                <span id="price">9999</span>
+                                <span id="carr">руб.</span>
+                            </div>
+
+
+                            <span id="name"><a href="">Утюг Filips s450</a></span>
+                        </div>
+                        <div class="carousel-goods-cart">
+                            <a href="">Подробнее</a>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="carousel-goods__item">
+                    <div class="carousel-goods-item">
+                        <img src="https://i.picsum.photos/id/557/300/200.jpg?hmac=I8VNA3M1ZqTqbZSYqF9cmYLFC0PTsH4jtvDB-I26M2Q"
+                             alt="" class="carousel-goods__img">
                         <div class="carousel-goods-price">
                             <div class="carousel-goods-price-num">
                                 <span id="price">9999</span>
@@ -514,7 +521,6 @@
             </div>
         </div>
     </div>
-
 
 
     <div class="main-express">

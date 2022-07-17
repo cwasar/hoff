@@ -7,11 +7,30 @@ const catalog = document.querySelector('.header-catalog')
 const cross = document.querySelector('.header-bottom-catalog-btn > span')
 const subMenu = document.querySelector('#submenu')
 const allMenu = Array.from(document.querySelectorAll('.submenu-item'))
+const mediaQuery = window.matchMedia('(min-width: 800px)')
+const overlay = document.querySelector('.overlay')
+const btn = document.querySelector('.header-bottom-catalog-btn')
+const back = document.querySelector('.header-bottom-catalog')
+const header = document.querySelector('.header-center')
+const search = document.querySelector('.header-center-content-logo')
+
+//проверка разрешения для переноса кнопки
+if (!mediaQuery.matches) {
+
+    search.after(btn)
+} else {
+    back.prepend(btn)
+}
 
 
-const btnCatalog = document.querySelector('.header-bottom-catalog').addEventListener('click',() => {
+
+const btnCatalog = document.querySelector('.header-bottom-catalog-btn').addEventListener('click',() => {
     catalog.classList.toggle('active')
     cross.classList.toggle('active')
+    overlay.classList.toggle('active')
+    if (mediaQuery.matches) {
+        let doActive = document.querySelector('.header-catalog-main-item').classList.add('active')
+    }
     allMenu.forEach(item => {
         if (item.dataset.name === document.querySelector('.header-catalog-main-item').dataset.name){
             item.classList.add('active')
@@ -20,10 +39,11 @@ const btnCatalog = document.querySelector('.header-bottom-catalog').addEventList
         }
     })
 
+
 })
 
 const menu = document.querySelector('.header-catalog-main').addEventListener('mouseover', (e) => {
-    if (e.target.className === 'header-catalog-main-item') {
+    if (e.target.className === 'header-catalog-main-item' && mediaQuery.matches) {
         let allitems = document.querySelectorAll('.header-catalog-main-item')
         allitems.forEach(item => {
             item.classList.remove('active')
@@ -39,6 +59,35 @@ const menu = document.querySelector('.header-catalog-main').addEventListener('mo
         })
     }
 })
+
+//мобильное меню
+const mobileSub = document.querySelector('.header-catalog-sub')
+const mobileMenu = document.querySelector('.header-catalog-main')
+mobileMenu.addEventListener('click', e => {
+    if (e.target.tagName === 'A') {
+        e.preventDefault()
+        mobileMenu.classList.add('active')
+        mobileSub.classList.add('active')
+        let backBtn = document.createElement('button')
+        backBtn.innerHTML = '\t&larr; назад'
+        backBtn.classList.add('backBtn')
+        mobileSub.insertAdjacentElement('afterbegin', backBtn)
+        backBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active')
+            mobileSub.classList.remove('active')
+            backBtn.remove()
+        })
+        allMenu.forEach(item => {
+            if (item.dataset.name === e.target.dataset.name) {
+                item.classList.add('active')
+            } else {
+                item.classList.remove('active')
+            }
+        })
+    }
+
+})
+
 
 //main-slider
 
@@ -56,10 +105,23 @@ $( document ).ready(function () {
     $(".carousel-goods").slick({
         dots: false,
         slidesToShow: 5,
-        initialSlide: 0,
-        centerMode: false,
-        prevArrow: '<i class="fa-solid fa-angle-left slick-prev"></i>',
-        nextArrow: '<i class="fa-solid fa-angle-right slick-next"></i>'
+        infinite: false,
+        prevArrow: '<i class="fa-solid fa-angle-left slick-prev2"></i>',
+        nextArrow: '<i class="fa-solid fa-angle-right slick-next2"></i>',
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     })
 
 
@@ -137,15 +199,9 @@ function showPin(e) {
 
 
 //фиксируем шапку при прокрутке и смещаем кнопку каталога
-console.log(window.pageYOffset)
 window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header-center')
-    const search = document.querySelector('.header-center-content-logo')
-    const btn = document.querySelector('.header-bottom-catalog-btn')
-    const back = document.querySelector('.header-bottom-catalog')
 
-    if (window.pageYOffset > 45) {
-
+    if (window.pageYOffset > 45 || !mediaQuery.matches) {
         header.style.position = 'fixed'
         header.style.width = '100%'
         header.style.zIndex = 1000

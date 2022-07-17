@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "autoprefixer": "^10.4.7",
     "bootstrap": "^5.2.0-beta1",
     "normalize.css": "^8.0.1",
     "npm-git-install": "^0.3.0"

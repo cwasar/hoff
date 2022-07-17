@@ -80,13 +80,15 @@
   box-sizing: border-box
   margin-top: 2rem
   &__img
-    max-height: 400px
-    max-width: 99%
+    height: auto
+    width: 100%
   &__item
-    border: 1px solid #a19d9d
+    border: 1px solid #b6b6b6
+    background-color: $white
     border-radius: 1px
-    margin: 0 1rem
-    z-index: 10
+    margin-right: 1rem
+    height: 100%
+    border-radius: 1px
   &-price
     padding: 0 1rem
     display: flex
@@ -119,3 +121,22 @@
       &:hover
         color: darkred
         cursor: pointer
+
+.slick-prev2
+  margin-top: 200px
+  right: 50px
+  bottom: 120px
+  z-index: 2
+.slick-next2
+  margin-top: 200px
+  right: 0
+  bottom: 120px
+  z-index: 2
+@media (max-width: 800px)
+  .carousel-goods
+    &__img
+      max-height: 200px
+  .slick-prev2
+    margin-top: 210px
+  .slick-next2
+    margin-top: 210px
